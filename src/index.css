@@ -1,0 +1,29 @@
+@import "tailwindcss";
+
+@theme {
+  --color-*: initial;
+  --color-surface: #1e1b1c;
+  --color-primary: #faa74c;
+  --font-sono: "Sono", "monospace";
+}
+
+::selection {
+  background-color: var(--color-primary);
+  color: var(--color-surface);
+}
+
+.blinking-caret::after {
+  content: "|";
+  animation: blink 1s steps(1) infinite;
+  margin-left: 2px;
+}
+
+@keyframes blink {
+  50% {
+    opacity: 0;
+  }
+}
+
+#cursor-dot {
+  transform: translate(-50%, -50%);
+}
