@@ -1,35 +1,36 @@
-import { Component } from "solid-js";
+import { Component, For } from "solid-js";
+import { HeroData } from "../types/data";
+import heroData from "../data/hero.json";
 import Heading from "./base/Heading";
 import Text from "./base/Text";
 import Nav from "./Nav";
 import Logo from "./base/Logo";
 import Button from "./base/Button";
-
-const links = [
-  { text: "Work", url: "#work" },
-  { text: "About", url: "#about" },
-  { text: "Contact", url: "#about" },
-];
+import { scrollToSection } from "../lib";
 
 const HeroSection: Component = () => {
+  const content = heroData as HeroData;
+  const { name, role, taglines, cta, navigation } = content;
+
   return (
-    <div class="text flex h-screen flex-col items-center justify-between p-6">
+    <section class="flex h-screen flex-col items-center justify-between p-6">
       <div class="flex flex-col items-center gap-2">
         <Logo />
-        <Nav links={links} />
+        <Nav links={navigation} />
       </div>
 
       <div class="text-center">
-        <Heading text="John Mark Osias" />
-        <Heading text="Full-Stack JS Developer" />
-        <Text isLight text="Building user-focused web apps" />
-        <Text isLight text="with modern technologies" />
+        <Heading text={name} />
+        <Heading text={role} />
+        <For each={taglines}>
+          {(tagline) => <Text isLight text={tagline} />}
+        </For>
       </div>
 
       <div class="pb-20">
-        <Button text="View selected works" />
+        <Button onClick={() => scrollToSection("#work")} text={cta} />
       </div>
-    </div>
+    </section>
   );
 };
 

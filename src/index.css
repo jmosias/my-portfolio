@@ -4,6 +4,7 @@
   --color-*: initial;
   --color-background: #191b1d;
   --color-foreground: #fff0db;
+  --color-foreground-transparent: #fff0db4d; /* 30% opacity */
   --color-primary: #dc143c;
   --color-primary-transparent: #dc143c4d; /* 30% opacity */
   --font-display: "BrandDisplay", "serif";

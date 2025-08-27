@@ -1,0 +1,144 @@
+[
+  {
+    "id": "01",
+    "title": "Multi-Channel Communication Platform",
+    "technologies": ["ReactJS", "NodeJS", "WebSocket", "Express", "Twilio API", "Email API", "MongoDB"],
+    "description": "Full-stack messaging platform unifying email, live chat, SMS, and MMS communication in a single interface. Built for a professional technical assessment, featuring real-time messaging, contact management, and multi-protocol API integration.",
+    "imageUrls": ["/images/works/communication-app-email-dashboard.png"],
+    "imageAlts": ["Multi-Channel Communication Platform Screenshot"],
+    "caseStudy": [{
+      "heading": "Problem",
+      "content": ["Modern businesses struggle with fragmented communication across multiple channels - email, chat, SMS, and MMS systems operate in silos, creating inefficient workflows and missed messages."]
+    },{
+      "heading": "Solution",
+      "content": ["Developed a unified communication platform that brings all channels into one interface. Users can send emails, chat messages, SMS, and MMS from a single dashboard while maintaining conversation context across all mediums."]
+    },{
+      "heading": "Key Features:",
+      "content": ["Real-time chat with WebSocket implementation", "Email integration with full threading support", "SMS/MMS functionality via Twilio API", "Contact management and conversation history", "Responsive design for mobile and desktop"]
+    },{
+      "heading": "Technical Challenges:",
+      "content": ["Real-time synchronization across multiple communication protocols", "Managing different API rate limits and error handling", "Maintaining conversation context when switching between communication types", "Implementing secure message storage and retrieval"]
+    },{
+      "heading": "Architecture Decisions:",
+      "content": ["WebSocket for real-time chat functionality", "RESTful APIs for email and SMS integration", "MongoDB for flexible message schema across different types", "JWT authentication for secure session management"]
+    }, {
+      "heading": "Results",
+      "content": ["Successfully built and deployed a full-stack communication platform that streamlines multi-channel messaging. The project demonstrates proficiency in React, NodeJS, WebSocket, and third-party API integration, showcasing the ability to solve complex technical challenges in a user-centric manner."]
+    }]
+  },
+  {
+    "id": "02",
+    "title": "Project Management System",
+    "technologies": ["ReactJS", "NodeJS", "TypeScript", "PostgreSQL", "REST APIs"],
+    "description": "Enterprise project management system built for development teams, featuring task tracking, sprint management, and team collaboration tools. Designed to streamline workflow management with Jira-like functionality tailored for software development processes.",
+    "imageUrls": ["/images/works/project-management-system-kanban-dashboard.png"],
+    "imageAlts": ["Project Management System Dashboard"],
+    "caseStudy": [
+      {
+        "heading": "Problem",
+        "content": ["Development teams lacked an integrated project management solution that could handle complex workflows, security requirements, and real-time collaboration while maintaining performance at scale."]
+      },
+      {
+        "heading": "Solution",
+        "content": ["Built a comprehensive project management platform specifically designed for development teams, featuring task management, sprint planning, time tracking, and team collaboration tools with enterprise-grade security."]
+      },
+      {
+        "heading": "Key Features",
+        "content": [
+          "Task creation, assignment, and progress tracking",
+          "Sprint planning and backlog management",
+          "Real-time updates and notifications",
+          "Team collaboration and commenting system",
+          "Advanced reporting and analytics",
+          "Role-based access control and permissions"
+        ]
+      },
+      {
+        "heading": "Technical Challenges",
+        "content": [
+          "Implementing complex user permission systems across multiple project hierarchies",
+          "Real-time updates for collaborative editing without conflicts",
+          "Optimizing database queries for large datasets and reporting",
+          "Ensuring system security through VAPT compliance",
+          "Building scalable architecture for growing user base"
+        ]
+      },
+      {
+        "heading": "Security Implementation",
+        "content": [
+          "Resolved critical vulnerabilities identified through VAPT testing",
+          "Implemented secure authentication and authorization flows",
+          "Built comprehensive audit logging system",
+          "Ensured data encryption and secure API endpoints"
+        ]
+      },
+      {
+        "heading": "Results",
+        "content": ["Successfully served 100+ development teams with improved project tracking efficiency and enhanced security posture."]
+      }
+    ]
+  },
+  {
+    "id": "03",
+    "title": "Enterprise Authentication Platform",
+    "technologies": ["ReactJS", "Python", "JWT", "OAuth", "PostgreSQL"],
+    "description": "Secure multi-tenant authentication system designed to serve multiple client websites with unified login capabilities. Built during internship training, featuring SSO functionality, session management, and cross-platform integration.",
+    "imageUrls": ["/images/works/auth-system-dashboard.png"],
+    "imageAlts": ["Enterprise Authentication Platform Dashboard"],
+    "caseStudy": [
+      {
+        "heading": "Problem",
+        "content": ["Multiple client websites needed a unified authentication solution that could handle different user bases while maintaining security, scalability, and seamless user experience across platforms."]
+      },
+      {
+        "heading": "Solution",
+        "content": ["Developed a multi-tenant authentication system that allows users to access multiple client applications with a single login, while maintaining data separation and security compliance for each tenant."]
+      },
+      {
+        "heading": "Key Features",
+        "content": [
+          "Single Sign-On (SSO) across multiple client applications",
+          "Multi-tenant architecture with data isolation",
+          "User registration and profile management",
+          "Session management and security controls",
+          "OAuth integration for third-party logins",
+          "Administrative dashboard for tenant management"
+        ]
+      },
+      {
+        "heading": "Technical Implementation",
+        "content": [
+          "JWT-based authentication with refresh token rotation",
+          "Multi-database architecture for tenant isolation",
+          "RESTful APIs for cross-platform integration",
+          "React frontend with Python backend",
+          "Comprehensive logging and monitoring"
+        ]
+      },
+      {
+        "heading": "Security Considerations",
+        "content": [
+          "Secure token storage and transmission",
+          "Rate limiting and brute force protection",
+          "Data encryption and compliance standards",
+          "Cross-site scripting (XSS) prevention",
+          "Secure session management across domains"
+        ]
+      },
+      {
+        "heading": "Learning Outcomes",
+        "content": [
+          "Enterprise-level security implementation",
+          "Multi-tenant architecture patterns",
+          "OAuth and JWT best practices",
+          "Cross-platform session management",
+          "Scalable authentication system design"
+        ]
+      },
+      {
+        "heading": "Results",
+        "content": ["Successfully implemented authentication system serving multiple client websites with seamless user experience and robust security measures."]
+      }
+    ]
+  }
+]
