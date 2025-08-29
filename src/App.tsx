@@ -2,6 +2,7 @@ import { type Component } from "solid-js";
 import HeroSection from "./components/HeroSection";
 import WorkSection from "./components/WorkSection";
 import AboutSection from "./components/AboutSection";
+import FooterSection from "./components/FooterSection";
 
 const App: Component = () => {
   return (
@@ -10,6 +11,7 @@ const App: Component = () => {
         <HeroSection />
         <WorkSection />
         <AboutSection />
+        <FooterSection />
       </div>
     </div>
   );
