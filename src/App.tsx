@@ -50,15 +50,10 @@ const App: Component = () => {
           class="border-primary pointer-events-none fixed z-[9999] size-3 rounded-full border transition-transform duration-150 will-change-transform"
         />
       )}
-
-      <h2 class="mb-4 text-xs font-extralight tracking-widest uppercase">
-        patch notes incoming
-      </h2>
       <div class="flex max-w-xl flex-col items-center gap-4 text-center">
         <h1>hello!</h1>
         <p class="blinking-caret text-sm leading-relaxed font-extralight">
-          i am currently revamping this portfolio to showcase projects more
-          interactively — including a custom OS-style UI
+          i am currently revamping my portfolio
         </p>
       </div>
       <p class="text-xs font-extralight">
