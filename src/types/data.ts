@@ -1,6 +1,23 @@
-export interface HeroData {
+export type IconName =
+  | "GithubIcon"
+  | "LinkedinIcon"
+  | "DownloadIcon"
+  | "DownIcon"
+  | "CloseIcon"
+  | "CopyIcon"
+  | "PopModalIcon";
+
+export interface InfoData {
   name: string;
   role: string;
+  email: string;
+  socials: { name: string; url: string; icon: IconName }[];
+  images: { url: string; alt: string; name: string }[];
+  resume: { url: string; cta: string; icon: IconName };
+  about: string[];
+}
+
+export interface HeroData {
   taglines: string[];
   cta: string;
   navigation: {

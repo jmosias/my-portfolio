@@ -1,0 +1,48 @@
+{
+  "name": "John Mark Osias",
+  "role": "Full-Stack JS Developer",
+  "email": "jmosias@outlook.com",
+  "socials": [
+    {
+      "name": "GitHub",
+      "url": "https://github.com/jmosias/",
+      "icon": "GithubIcon"
+    },
+    {
+      "name": "LinkedIn",
+      "url": "https://www.linkedin.com/in/john-mark-osias/",
+      "icon": "LinkedinIcon"
+    }
+  ],
+  "resume": {
+    "url": "/files/John Mark Osias Resume.pdf",
+    "cta": "View latest résumé",
+    "icon": "DownloadIcon"
+  },
+  "images": [
+    {
+      "url": "/images/social/profile-image-john-mark-osias.png",
+      "alt": "John Mark Osias",
+      "name": "Jm"
+    },
+    {
+      "url": "/images/social/persian-cat-loki.jpg",
+      "alt": "Light cream persian cat with blue eyes named Loki",
+      "name": "Loki"
+    },
+    {
+      "url": "/images/social/persian-cat-sypha.jpg",
+      "alt": "Black persian cat with yellow eyes named Sypha",
+      "name": "Sypha"
+    }
+  ],
+  "about": [
+    "Hi, I'm John Mark - a fullstack JavaScript developer passionate about building technology that is meaningful and supports mental wellness.",
+    "My love for creating began early. As a kid, I was fascinated by bringing ideas to life - from writing batch files to crafting custom Super Mario levels, then diving into Minecraft modding where I built elaborate worlds and command block contraptions. This creative spark led me through various technologies: Java and Kotlin for Android development, Unity and Godot for game creation. Each project taught me that code wasn't just about logic - it was about imagination and problem-solving.",
+    "When I discovered web development, I found my calling. The ability to build interactive experiences that people could access anywhere resonated with me. However, life took an unexpected turn during my Information Technology studies. After two years, financial circumstances required me to start working as a Frontend Developer earlier than planned. What could have been a setback became an opportunity to turn my childhood passion into a professional career.",
+    "Over the following years, I built everything from secure authentication systems to real-time communication platforms, always carrying that same creative energy from my early days. When I took a recent career break, I used the time intentionally - expanding my skills with modern frameworks like SolidJS and completing IBM certifications. The break also gave me perspective on what kind of impact I want to make.",
+    "As a Christian, I'm driven to use my abilities to serve others meaningfully. Having experienced life's challenges personally, I'm particularly drawn to projects that support mental health and help people through tough times. Technology has incredible potential to provide comfort, connection, and hope when people need it most.",
+    "Whether I'm biking around the city, gaming, or researching how to help mental wellness through development, I carry the same curiosity and creativity that first drew me to code. Now I'm seeking opportunities where I can contribute to a collaborative team while building applications that genuinely make a difference in people's lives, especially in wellness and mental health support.",
+    "Ready to work together? I'd love to hear from you."
+  ]
+}

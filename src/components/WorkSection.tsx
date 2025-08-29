@@ -29,7 +29,12 @@ const WorkSection: Component = () => {
             <div class="lg:max-w-1/2">
               <Text isLight text={work.description} />
             </div>
-            <Button onClick={() => {}} isPrimary text="Read Case Study" />
+            <Button
+              onClick={() => {}}
+              isPrimary
+              text="Read Case Study"
+              icon="PopModalIcon"
+            />
             <div class="lg:max-w-1/2">
               <WorkGallery images={work.imageUrls} alts={work.imageAlts} />
             </div>
