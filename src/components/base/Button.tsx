@@ -4,7 +4,7 @@ import Icon from "./Icon";
 import { IconName } from "../../types/data";
 
 interface ButtonProps {
-  text: string;
+  text?: string;
   icon?: IconName;
   isPrimary?: boolean;
   isIconOnly?: boolean;

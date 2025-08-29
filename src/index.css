@@ -48,14 +48,16 @@ body {
   letter-spacing: -5%;
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  font-family: "BrandDisplay", serif;
+body:has(dialog[open]) {
+  overflow: hidden;
 }
+
+:root {
+  scrollbar-color: var(--color-primary-transparent) var(--color-background);
+  scrollbar-width: 1px;
+  scrollbar-gutter: 1px;
+}
+
 ::selection {
   background-color: var(--color-foreground);
   color: var(--color-background);

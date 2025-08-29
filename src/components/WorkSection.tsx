@@ -1,4 +1,4 @@
-import { Component, For } from "solid-js";
+import { Component, createSignal, For } from "solid-js";
 import { Works } from "../types/data";
 import worksData from "../data/works.json";
 import Heading from "./base/Heading";
@@ -6,9 +6,12 @@ import Tags from "./base/Tags";
 import Text from "./base/Text";
 import Button from "./base/Button";
 import WorkGallery from "./WorkGallery";
+import CaseStudyModal from "./modals/CaseStudyModal";
 
 const WorkSection: Component = () => {
   const works = worksData as Works;
+  // Use a signal to store the index of the open modal, or null if none open
+  const [openIndex, setOpenIndex] = createSignal<number | null>(null);
 
   return (
     <section id="work" class="flex flex-col gap-8 p-6 sm:gap-12 lg:gap-24">
@@ -30,10 +33,15 @@ const WorkSection: Component = () => {
               <Text isLight text={work.description} />
             </div>
             <Button
-              onClick={() => {}}
+              onClick={() => setOpenIndex(index())}
               isPrimary
               text="Read Case Study"
-              icon="PopModalIcon"
+              icon="CopyIcon"
+            />
+            <CaseStudyModal
+              open={openIndex() === index()}
+              onClose={() => setOpenIndex(null)}
+              data={work}
             />
             <div class="lg:max-w-1/2">
               <WorkGallery images={work.imageUrls} alts={work.imageAlts} />
