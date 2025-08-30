@@ -1,0 +1,12 @@
+{
+  "taglines": [
+    "Building user-focused web apps",
+    "with modern technologies"
+  ],
+  "cta": "View selected works",
+  "navigation": [
+    { "text": "Work", "url": "#work" },
+    { "text": "Contact", "url": "#about_contact" },
+    { "text": "About", "url": "#about_contact" }
+  ]
+}

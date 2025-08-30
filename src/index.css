@@ -2,28 +2,63 @@
 
 @theme {
   --color-*: initial;
-  --color-surface: #1e1b1c;
-  --color-primary: #faa74c;
-  --font-sono: "Sono", "monospace";
+  --color-background: #191b1d;
+  --color-foreground: #fff0db;
+  --color-foreground-transparent: #fff0db4d; /* 30% opacity */
+  --color-primary: #dc143c;
+  --color-primary-transparent: #dc143c4d; /* 30% opacity */
+  --font-display: "BrandDisplay", "serif";
+}
+
+@font-face {
+  font-family: "BrandDisplay";
+  src: url("/fonts/brown-sugar.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "BrandSans";
+  src: url("/fonts/ysabeau-office-latin-200-normal.ttf") format("truetype");
+  font-weight: 200;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "BrandSans";
+  src: url("/fonts/ysabeau-office-latin-400-normal.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "BrandSans";
+  src: url("/fonts/ysabeau-office-latin-700-normal.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+body {
+  font-family: "BrandSans", sans-serif;
+  background-color: var(--color-background);
+  color: var(--color-foreground);
+  letter-spacing: -5%;
+}
+
+body:has(dialog[open]) {
+  overflow: hidden;
+}
+
+:root {
+  scrollbar-color: var(--color-primary-transparent) var(--color-background);
+  scrollbar-width: 1px;
+  scrollbar-gutter: 1px;
 }
 
 ::selection {
-  background-color: var(--color-primary);
-  color: var(--color-surface);
-}
-
-.blinking-caret::after {
-  content: "|";
-  animation: blink 1s steps(1) infinite;
-  margin-left: 2px;
-}
-
-@keyframes blink {
-  50% {
-    opacity: 0;
-  }
-}
-
-#cursor-dot {
-  transform: translate(-50%, -50%);
+  background-color: var(--color-foreground);
+  color: var(--color-background);
 }
