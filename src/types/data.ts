@@ -5,7 +5,8 @@ export type IconName =
   | "DownIcon"
   | "CloseIcon"
   | "CopyIcon"
-  | "PopModalIcon";
+  | "PopModalIcon"
+  | "CheckIcon";
 
 export interface InfoData {
   name: string;

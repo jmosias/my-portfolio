@@ -36,15 +36,22 @@ const WorkSection: Component = () => {
               onClick={() => setOpenIndex(index())}
               isPrimary
               text="Read Case Study"
-              icon="CopyIcon"
+              icon="PopModalIcon"
             />
             <CaseStudyModal
               open={openIndex() === index()}
               onClose={() => setOpenIndex(null)}
               data={work}
             />
-            <div class="lg:max-w-1/2">
-              <WorkGallery images={work.imageUrls} alts={work.imageAlts} />
+            <div class="text-foreground-transparent flex flex-col items-center gap-1 sm:gap-2 lg:max-w-1/2">
+              <div class="">
+                <WorkGallery images={work.imageUrls} alts={work.imageAlts} />
+              </div>
+              <Text
+                isLight
+                noLeading
+                text="UI design recreated for portfolio"
+              />
             </div>
           </div>
         )}

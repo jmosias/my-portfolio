@@ -1,4 +1,4 @@
-import { Component } from "solid-js";
+import { Component, createSignal, onCleanup } from "solid-js";
 import Text from "./Text";
 import Icon from "./Icon";
 import { IconName } from "../../types/data";
@@ -14,49 +14,81 @@ interface ButtonProps {
 }
 
 const Button: Component<ButtonProps> = (props) => {
-  const { text, isPrimary, onClick, icon, isIconOnly, externalLink, copyText } =
-    props;
+  const [isCopied, setIsCopied] = createSignal(false);
+  let timeoutId: number | undefined;
 
-  const handleExternalLinkClick = () => {
-    if (externalLink) {
-      window.open(externalLink, "_blank");
-      onClick && onClick();
+  onCleanup(() => {
+    if (timeoutId) {
+      clearTimeout(timeoutId);
     }
-  };
+  });
 
-  const handleCopyToClipboard = (textToCopy: string) => {
-    navigator.clipboard.writeText(textToCopy).then(() => {
-      onClick && onClick();
-    });
+  const handleCopyToClipboard = async (textToCopy: string) => {
+    try {
+      await navigator.clipboard.writeText(textToCopy);
+      setIsCopied(true);
+
+      if (timeoutId) {
+        clearTimeout(timeoutId);
+      }
+
+      timeoutId = setTimeout(() => {
+        setIsCopied(false);
+        timeoutId = undefined;
+      }, 2000);
+
+      props.onClick?.();
+    } catch (error) {
+      console.error("Failed to copy text: ", error);
+      props.onClick?.();
+    }
   };
 
   const handleButtonClick = () => {
-    if (externalLink) {
-      handleExternalLinkClick();
+    if (props.externalLink) {
+      window.open(props.externalLink, "_blank");
+      props.onClick?.();
+    } else if (props.copyText) {
+      handleCopyToClipboard(props.copyText);
+    } else {
+      props.onClick?.();
     }
-    if (copyText) {
-      handleCopyToClipboard(copyText);
-    }
-    if (!externalLink && !copyText) {
-      onClick && onClick();
-    }
+  };
+
+  const buttonClasses = () => {
+    const baseClasses =
+      "border-primary-transparent hover:bg-primary-transparent flex cursor-pointer items-center justify-center gap-1 rounded-md border font-extralight transition-all sm:gap-2 lg:rounded-lg";
+    const primaryClasses = props.isPrimary
+      ? " bg-primary-transparent hover:border-primary"
+      : "";
+    const sizeClasses = props.isIconOnly
+      ? " p-2 sm:p-3"
+      : " px-8 py-1 sm:px-12 sm:py-2 lg:px-16";
+    return baseClasses + primaryClasses + sizeClasses;
   };
 
   return (
     <button
-      class={
-        `border-primary-transparent hover:bg-primary-transparent flex cursor-pointer items-center justify-center gap-1 rounded-md border font-extralight transition-all sm:gap-2 lg:rounded-lg` +
-        (isPrimary ? " bg-primary-transparent hover:border-primary" : "") +
-        (isIconOnly ? " p-2 sm:p-3" : " px-8 py-1 sm:px-12 sm:py-2 lg:px-16")
-      }
+      class={buttonClasses()}
       onclick={handleButtonClick}
+      disabled={props.copyText && isCopied()}
     >
-      {isIconOnly ? null : <Text isLight noLeading text={text} />}
-      {icon && (
-        <div class="size-3 sm:size-4 lg:size-5">
-          <Icon name={icon} />
-        </div>
+      {!props.isIconOnly && (
+        <Text
+          isLight
+          noLeading
+          text={
+            props.copyText && isCopied()
+              ? props.copyText.includes("@")
+                ? "Email copied!"
+                : "Copied!"
+              : props.text
+          }
+        />
       )}
+      <div class="size-3 sm:size-4 lg:size-5">
+        <Icon name={isCopied() ? "CheckIcon" : props.icon} />
+      </div>
     </button>
   );
 };

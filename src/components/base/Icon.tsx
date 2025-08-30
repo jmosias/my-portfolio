@@ -8,6 +8,7 @@ import {
   CloseIcon,
   CopyIcon,
   PopModalIcon,
+  CheckIcon,
 } from "../../icons";
 
 interface IconProps {
@@ -30,6 +31,8 @@ const Icon: Component<IconProps> = (props) => {
       return <CopyIcon />;
     case "PopModalIcon":
       return <PopModalIcon />;
+    case "CheckIcon":
+      return <CheckIcon />;
     default:
       return null;
   }
